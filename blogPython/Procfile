@@ -1,1 +1,2 @@
-web: gunicorn blogPython.urls
+release: python3 manage.py migrate
+web: gunicorn blogPython.wsgi --preload --log-file -
