@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ugc-1*p$$3b=n+i!+!c!lrzp#6$u-bby1h47@mb$6d&s8zdgl0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://git.heroku.com/mundo-sobrevivencia.git']
 
 
 # Application definition
@@ -145,4 +145,4 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'success',
 }
 
-#django_heroku.settings(local())
+django_heroku.settings(local())
