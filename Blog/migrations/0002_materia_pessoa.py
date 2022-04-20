@@ -2,12 +2,12 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('produtores', '0001_initial'),
         ('Blog', '0001_initial'),
     ]
 
@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='materia',
             name='pessoa',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='produtores.produtores'),
+            preserve_default=False,
         ),
     ]

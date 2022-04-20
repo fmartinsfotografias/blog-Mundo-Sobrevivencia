@@ -102,32 +102,6 @@ def criapost(request):
         return render(request, 'usuarios/cria_post.html')
 
 
-def deleta_materia(request, materia_id):
-    materia = get_object_or_404(Materia, pk=materia_id)
-    materia.delete()
-    return redirect('dashboard')
-
-
-def edita_materia(request, materia_id):
-    materia = get_object_or_404(Materia, pk=materia_id)
-    receita_a_editar = {'materia': materia}
-    return render(request, 'usuarios/editar.html', receita_a_editar)
-
-
-def atualiza_materia(request):
-    if request.method == 'POST':
-        materia_id = request.POST['materia_id']
-        r = Materia.objects.get(pk=materia_id)
-        r.nome_materia = request.POST['nome_materia']
-        r.resumo = request.POST['resumo']
-        r.materia = request.POST['materia']
-        r.categoria = request.POST['categoria']
-        if 'foto_materia' in request.FILES:
-            r.foto = request.FILES['foto_materia']
-        r.save()
-    return redirect('dashboard')
-
-
 def campo_vazio(campo):
 
     return not campo.strip()

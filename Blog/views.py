@@ -7,10 +7,13 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404
 
 def index(request):
 
-    materias = Materia.objects.order_by('-data_materia')
+    materias = Materia.objects.order_by('-data_materia').filter(publicada=True)
+
+    id = request.user.id
+    post = Materia.objects.order_by('-data_materia').filter(pessoa=id)
 
     dados = {
-        'materias': materias,
+        'materias': materias, 'post': post
     }
 
     return render(request, 'index.html', dados)

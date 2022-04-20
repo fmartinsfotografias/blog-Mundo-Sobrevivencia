@@ -14,6 +14,7 @@ from threading import local
 from django.contrib.messages import constants as messages
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'usuarios',
+    'produtores',
     'Blog',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -145,3 +147,4 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'success',
 }
+
